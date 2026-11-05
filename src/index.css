@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme static {
+  --font-sans: "Inter Variable", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-display: "Sora Variable", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-mute: var(--mute);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-c1: #6d5efc;
+  --color-c2: #ff5c8a;
+  --color-c3: #ffb020;
+  --color-c4: #12cfa0;
+  --color-c5: #1fa8ff;
+}
+
+:root { --bg: #fbfbff; --fg: #14142b; --mute: #5d5f7a; --card: #ffffffd9; --line: #e4e4f2; }
+.dark { --bg: #0d0d1a; --fg: #f2f2ff; --mute: #a3a5c4; --card: #171728d9; --line: #2b2b48; }
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-bg text-fg font-sans antialiased; transition: background-color .3s, color .3s; }
+  section[id] { scroll-margin-top: 5rem; }
+}
+
+/* Squircle corners (MacBook-style); falls back to plain rounded corners */
+@utility sq {
+  border-radius: 14px;
+  @supports (corner-shape: squircle) { corner-shape: squircle; border-radius: 24px; }
+}
+@utility card { @apply sq bg-card border border-line; }
+@utility btn {
+  @apply sq inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold cursor-pointer select-none;
+  transition: transform .2s, box-shadow .2s, background-color .2s, border-color .2s;
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: scale(.97); }
+}
+@utility btn-ghost { @apply card text-fg hover:border-c1; }
+@utility icon-btn {
+  @apply card inline-flex items-center justify-center gap-2 p-3 text-fg cursor-pointer hover:border-c1;
+  transition: transform .2s, border-color .2s;
+  &:hover { transform: translateY(-2px); }
+  &:active { transform: scale(.97); }
+}
+
+.btn-primary { @apply text-white; background: linear-gradient(120deg, var(--color-c1), var(--color-c2)); box-shadow: 0 10px 28px -10px var(--color-c1); }
+.card-lg { border-radius: 28px; }
+@supports (corner-shape: squircle) { .card-lg { corner-shape: squircle; border-radius: 56px; } }
+
+.grad { background: linear-gradient(100deg, var(--color-c1), var(--color-c2) 55%, var(--color-c3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.kicker { @apply font-display text-xs font-bold uppercase tracking-[.3em] text-c1 mb-3 block; }
+.cv { content-visibility: auto; contain-intrinsic-size: auto 700px; }
+
+@keyframes float { to { transform: translateY(-14px) rotate(6deg); } }
+@keyframes pop { from { opacity: 0; transform: translateY(-8px) scale(.97); } }
+.float { animation: float 6s ease-in-out infinite alternate; }
+.pop { animation: pop .2s ease-out; }
+@media (prefers-reduced-motion: reduce) { .float, .pop { animation: none; } html { scroll-behavior: auto; } }
