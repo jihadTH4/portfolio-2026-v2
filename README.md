@@ -1,11 +1,69 @@
-# Portfolio 2026 — v2
+# معرض أعمال جهاد ثابت
 
-React 19 + Vite + Tailwind v4 + Motion. Bilingual (AR/EN, RTL/LTR), light/dark.
+موقع شخصي ثنائي اللغة (عربي وإنجليزي) مع لوحة تحكم لإضافة الأعمال وتعديلها، بلا خادم ولا قاعدة بيانات ولا مكتبات خارجية.
+
+- **الموقع العام** صفحات HTML ثابتة تُبنى مسبقاً. حجم الصفحة الرئيسية حوالي 10 كيلوبايت، وCSS حوالي 12 كيلوبايت، وسكربت واحد أقل من 1 كيلوبايت لتبديل المظهر. لا React ولا مكتبات أنيميشن.
+- **لوحة التحكم** على `/admin/`، وتحفظ التعديلات مباشرة في هذا المستودع على GitHub بإيداع (commit) واحد. Vercel يعيد بناء الموقع تلقائياً بعد كل إيداع، خلال دقيقة تقريباً.
+
+## هيكل المشروع
+
+| المسار | المحتوى |
+|---|---|
+| `content/site.json` | الاسم، التعريف، «عني»، المهارات، الشهادات، روابط التواصل |
+| `content/projects.json` | الأعمال بترتيب ظهورها |
+| `content/images/` | الصور (WebP) |
+| `render.js` | قوالب الصفحات، يستخدمها البناء ومعاينة اللوحة معاً |
+| `build.js` | يبني الموقع في `dist/` (Node فقط، بلا حزم) |
+| `assets/` | CSS والسكربت والأيقونة |
+| `admin/` | لوحة التحكم |
+
+## الاستضافة (GitHub Pages، مجانية)
+
+- الموقع: https://jihadth4.github.io/portfolio-2026-v2/
+- لوحة التحكم: https://jihadth4.github.io/portfolio-2026-v2/admin/
+- مع كل إيداع على `main`، سواء من لوحة التحكم أو يدوياً، يعمل `.github/workflows/pages.yml`:
+  1. يتحقق من المحتوى.
+  2. يبني الموقع بـ `SITE_BASE=/portfolio-2026-v2`.
+  3. ينشره في فرع `gh-pages`.
+- **مرة واحدة فقط:** Settings ← Pages ← Source: **Deploy from a branch** ← الفرع `gh-pages` والمجلد `/ (root)`.
+- إن أردت Vercel بدلاً منها، فالإعدادات جاهزة في `vercel.json`. اتركه بلا `SITE_BASE`، وغيّر «رابط الموقع» من اللوحة.
+
+## استخدام لوحة التحكم
+
+1. افتح `https://موقعك/admin/`.
+2. أنشئ رمز وصول **Fine-grained token** من GitHub:
+   Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token
+   - **Repository access:** Only select repositories ← مستودع الموقع فقط.
+   - **Permissions:** Repository permissions ← **Contents: Read and write**. لا شيء غيرها.
+   - حدّد مدة صلاحية، مثلاً 90 يوماً.
+3. أدخل اسم الحساب واسم المستودع والفرع (`main`) والرمز.
+4. عدّل كما تشاء، ثم اضغط **نشر التغييرات**.
+
+**الأمان:**
+- الرمز لا يُرسل إلا إلى api.github.com، ويُحفظ في المتصفح لهذه الجلسة فقط، إلا إذا اخترت «تذكّر الاتصال على هذا الجهاز».
+- من يفتح `/admin/` بلا رمز لا يستطيع فعل أي شيء.
+- الصفحة مستبعدة من محركات البحث.
+
+**ما تفعله اللوحة:**
+- تصغّر الصور في المتصفح وتحوّلها إلى WebP قبل الرفع.
+- تحذف من المستودع الصور التي لم يعد يستخدمها أي عمل.
+- لا تكتب فوق تعديل حدث من مكان آخر بعد أن فتحتها؛ تطلب منك إعادة التحميل.
+- تعرض معاينة لأي صفحة قبل النشر.
+
+## العمل محلياً
 
 ```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # type-check + production build -> dist/
+node build.js            # يبني dist/
+node scripts/serve.js    # يعرضه على http://localhost:4321 بنفس روابط Vercel
+node scripts/test.js     # يتحقق من البناء والروابط والصور
 ```
 
-Edit content in `src/data.ts` (texts, links, projects, skills). Colors: `--color-c1..c5` in `src/index.css`.
+يحتاج Node 18 أو أحدث. لا يوجد `npm install`.
+
+## كتابة نص الصفحة
+
+- سطر فارغ يبدأ فقرة جديدة.
+- السطر الذي يبدأ بـ `## ` يصير عنواناً.
+- السطر الذي يبدأ بـ `- ` يصير نقطة في قائمة.
+- النص بين `**` و`**` يصير عريضاً.
+- `[نص](https://رابط)` يصير رابطاً.

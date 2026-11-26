@@ -1,0 +1,115 @@
+[
+  {
+    "slug": "shelter-center-manager",
+    "kind": "case",
+    "featured": true,
+    "hidden": false,
+    "year": "2026",
+    "title": { "ar": "نظام إدارة مركز إيواء", "en": "Shelter Center Manager" },
+    "summary": {
+      "ar": "برنامج مكتبي عربي لإدارة أكثر من 1300 فرد و300 أسرة وعشرات الكشوفات في مركز إيواء، بدل عشرات ملفات Excel المتفرقة.",
+      "en": "An Arabic desktop app that replaces dozens of scattered Excel files for a shelter center with 1,300+ people, 300 families and dozens of lists."
+    },
+    "role": {
+      "ar": "تحليل المتطلبات مع إدارة المركز، وتصميم الحل، وقيادة التطوير بمساعدة الذكاء الاصطناعي، والاختبار على البيانات الحقيقية.",
+      "en": "Requirements with the center's management, solution design, AI-assisted development, and testing on the real data."
+    },
+    "tags": ["Go", "JavaScript", "Excel (OOXML)", "AES-GCM", "RTL"],
+    "cover": { "src": "iwaa-dashboard.webp", "alt": { "ar": "لوحة تحكم البرنامج ببيانات تجريبية", "en": "The app dashboard with demo data" } },
+    "gallery": [
+      { "src": "iwaa-persons.webp", "caption": { "ar": "سجل مركزي واحد لكل فرد، مع فلاتر وبحث فوري يتجاهل اختلافات كتابة الأسماء العربية.", "en": "One central record per person, with filters and instant search that tolerates Arabic spelling differences." } },
+      { "src": "iwaa-organize.webp", "caption": { "ar": "ترتيب الكشوفات وتصنيفها، واختيار مجموعة تُصدَّر بضغطة واحدة بتنسيق ملفاتها الأصلية.", "en": "Ordering and grouping lists, and a set that exports in one click in its original Excel format." } },
+      { "src": "iwaa-person.webp", "caption": { "ar": "صفحة الفرد: أسرته وكشوفاته وكل ما تغيّر عليه.", "en": "A person's page: family, lists, and every change made." } },
+      { "src": "iwaa-dropdown.webp", "caption": { "ar": "قوائم منسدلة بالبحث ولوحة المفاتيح، مع حروف البلوكات.", "en": "Searchable, keyboard-driven dropdowns with block letters." } },
+      { "src": "iwaa-light.webp", "caption": { "ar": "المظهر الفاتح.", "en": "Light theme." } },
+      { "src": "iwaa-phone.webp", "caption": { "ar": "يعمل من الهاتف أيضاً، على شبكة المركز أو عبر رابط آمن من أي مكان.", "en": "Works from a phone too, on the center's network or through a secure link from anywhere." } }
+    ],
+    "body": {
+      "ar": "## المشكلة\nكانت بيانات المركز موزعة على عشرات ملفات Excel: كشف للأفراد، وكشوف للأيتام والأرامل والأطفال وذوي الإعاقة، وكشوف تطلبها المؤسسات بتنسيقات مختلفة. أي تعديل على شخص واحد يعني البحث عنه في كل ملف يدوياً، والأخطاء في أرقام الهوية والتواريخ كانت تتكرر.\n\n## الحل\nسجل واحد لكل فرد، وعضوية مستقلة له في كل كشف. البرنامج يقترح الكشوفات المناسبة حسب شروط كل كشف، والقرار يبقى للمستخدم دائماً.\n\n- استيراد ملفات Excel كما هي، وتصديرها بتنسيقها الأصلي حرفياً: الأعمدة والعروض والمعادلات.\n- بحث فوري يتعامل مع اختلافات الكتابة العربية (أ/ا، ة/ه، ى/ي).\n- أحداث الأسرة: الوفاة والشهادة، وتحويل فرد إلى رب أسرة، مع معاينة كل ما سيتغير قبل التطبيق.\n- سجل عمليات كامل مع تراجع عن أي عملية، ونسخ احتياطية تلقائية.\n- حسابات للموظفين بصلاحيات مختلفة، ووصول من الهاتف.\n\n## الخصوصية\nالبيانات حساسة، لذلك تبقى على جهاز المركز فقط في قاعدة بيانات مشفرة بـ AES-GCM. الوصول من الإنترنت يمر عبر نفق مشفر، ولا تُخزن البيانات في أي خادم خارجي.\n\n## ملاحظة\nكل الصور هنا من نسخة تجريبية ببيانات وهمية. الكود خاص لأنه يخدم مركزاً حقيقياً، ويمكن عرضه مباشرة عند الطلب.",
+      "en": "## The problem\nThe center's data lived in dozens of Excel files: a list of people, lists of orphans, widows, children and people with disabilities, and lists that each organization asks for in its own format. Changing one person meant finding them in every file by hand, and mistakes in ID numbers and dates kept repeating.\n\n## The solution\nOne record per person, with an independent membership in each list. The app suggests lists that fit each list's conditions; the user always makes the decision.\n\n- Imports Excel files as they are, and exports them in their exact original format: columns, widths and formulas.\n- Instant search that handles Arabic spelling differences.\n- Family events: death and martyrdom, making a member head of the family, with a preview of every change before it's applied.\n- A full operations log with undo for any operation, and automatic backups.\n- Staff accounts with different permissions, and phone access.\n\n## Privacy\nThe data is sensitive, so it stays on the center's computer in an AES-GCM encrypted database. Internet access goes through an encrypted tunnel; no data is stored on any outside server.\n\n## Note\nAll images here come from a demo copy with fictional data. The code is private because it serves a real center; I can demo it live on request."
+    },
+    "links": [],
+    "note": { "ar": "الكود خاص — عرض مباشر عند الطلب", "en": "Private code — live demo on request" }
+  },
+  {
+    "slug": "debts-book",
+    "kind": "case",
+    "featured": false,
+    "hidden": false,
+    "year": "2026",
+    "title": { "ar": "دفتر الديون", "en": "Debts Book" },
+    "summary": {
+      "ar": "برنامج شخصي لتسجيل المشتريات بالدين والدفعات لكل تاجر، يقرأ رسالة الشراء من واتساب ويعبّئ الخانات وحده.",
+      "en": "A personal app for purchases on credit and payments per merchant; it reads a WhatsApp purchase message and fills in the form."
+    },
+    "role": {
+      "ar": "الفكرة وتصميم التجربة والتطوير بمساعدة الذكاء الاصطناعي.",
+      "en": "Idea, experience design and AI-assisted development."
+    },
+    "tags": ["Go", "JavaScript", "Excel export", "Arabic text parsing"],
+    "cover": { "src": "dayn-dashboard.webp", "alt": { "ar": "الصفحة الرئيسية لدفتر الديون ببيانات تجريبية", "en": "Debts Book home with demo data" } },
+    "gallery": [
+      { "src": "dayn-whatsapp.webp", "caption": { "ar": "لصق رسالة واتساب: يُستخرج التاجر والأصناف والكميات والأسعار والمجموع، حتى مع الأرقام العربية.", "en": "Paste a WhatsApp message: merchant, items, quantities, prices and total are extracted, Arabic numerals included." } },
+      { "src": "dayn-payment.webp", "caption": { "ar": "دفعة عامة أو على أصناف محددة، مع وقت الدفع واسم الدافع ونوع الدفعة وصورة الإيصال.", "en": "A general payment or one against chosen items, with time, payer, method and a receipt photo." } },
+      { "src": "dayn-statement.webp", "caption": { "ar": "كشف حساب لكل تاجر.", "en": "A statement per merchant." } },
+      { "src": "dayn-phone.webp", "caption": { "ar": "على الهاتف.", "en": "On a phone." } }
+    ],
+    "body": {
+      "ar": "## الفكرة\nتصلني رسائل الشراء بالدين على واتساب بصيغ مختلفة، وكنت أنقلها يدوياً. البرنامج يقرأ الرسالة ويفهم سياقها: اسم التاجر، والأصناف، والكميات والوحدات، والأسعار، والمجموع، ثم يعبّئ الخانات لأراجعها قبل الحفظ.\n\n- دفعات عامة أو موجهة لأصناف بعينها.\n- كشف حساب لكل تاجر، وتصدير إلى Excel.\n- سلة محذوفات واسترجاع، وقاعدة بيانات مشفرة على الجهاز.",
+      "en": "## The idea\nCredit purchases reach me as WhatsApp messages in many shapes, and I used to copy them by hand. The app reads the message and understands its context — merchant, items, quantities and units, prices, total — then fills the form for me to check before saving.\n\n- General payments, or payments against specific items.\n- A statement per merchant, and Excel export.\n- A trash bin with restore, and an encrypted database on the device."
+    },
+    "links": [],
+    "note": { "ar": "الكود خاص", "en": "Private code" }
+  },
+  {
+    "slug": "blogr-landing-page",
+    "kind": "exercise",
+    "featured": false,
+    "hidden": false,
+    "year": "2025",
+    "title": { "ar": "صفحة هبوط Blogr", "en": "Blogr landing page" },
+    "summary": { "ar": "صفحة هبوط متجاوبة مبنية بـ React وCSS.", "en": "A responsive landing page built with React and CSS." },
+    "tags": ["React", "Tailwind"],
+    "cover": { "src": "blogr.webp", "alt": { "ar": "لقطة من صفحة Blogr", "en": "Blogr page screenshot" } },
+    "gallery": [],
+    "body": { "ar": "", "en": "" },
+    "links": [
+      { "label": { "ar": "الموقع", "en": "Live" }, "url": "https://blogr-landing-page-main-vercel-wzij.vercel.app/" },
+      { "label": { "ar": "الكود", "en": "Code" }, "url": "https://github.com/jihadTH4/blogr-landing-page-main/tree/master" }
+    ]
+  },
+  {
+    "slug": "huddle-landing-page",
+    "kind": "exercise",
+    "featured": false,
+    "hidden": false,
+    "year": "2025",
+    "title": { "ar": "صفحة هبوط Huddle", "en": "Huddle landing page" },
+    "summary": { "ar": "أقسام منحنية بـ HTML وSass.", "en": "Curved sections with HTML and Sass." },
+    "tags": ["HTML", "SCSS"],
+    "cover": { "src": "huddle.webp", "alt": { "ar": "لقطة من صفحة Huddle", "en": "Huddle page screenshot" } },
+    "gallery": [],
+    "body": { "ar": "", "en": "" },
+    "links": [
+      { "label": { "ar": "الموقع", "en": "Live" }, "url": "https://huddle-landing-page-jith.netlify.app/" },
+      { "label": { "ar": "الكود", "en": "Code" }, "url": "https://github.com/jihadTH4/Huddle-landing-page-with-curved-sections" }
+    ]
+  },
+  {
+    "slug": "newsletter-sign-up",
+    "kind": "exercise",
+    "featured": false,
+    "hidden": false,
+    "year": "2025",
+    "title": { "ar": "نموذج اشتراك في نشرة بريدية", "en": "Newsletter sign-up" },
+    "summary": { "ar": "نموذج مع تحقق من البريد ورسالة نجاح.", "en": "A form with email validation and a success state." },
+    "tags": ["JavaScript"],
+    "cover": { "src": "newsletter.webp", "alt": { "ar": "لقطة من نموذج الاشتراك", "en": "Sign-up form screenshot" } },
+    "gallery": [],
+    "body": { "ar": "", "en": "" },
+    "links": [
+      { "label": { "ar": "الموقع", "en": "Live" }, "url": "https://newsletter-sign-up-jth.netlify.app/" },
+      { "label": { "ar": "الكود", "en": "Code" }, "url": "https://github.com/jihadTH4/newsletter-sign-up-with-success-message-main" }
+    ]
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "name": {
+    "ar": "جهاد ثابت",
+    "en": "Jihad Thabit"
+  },
+  "role": {
+    "ar": "مطوّر برمجيات · أبني أدوات عملية لإدارة البيانات",
+    "en": "Software developer building practical data tools"
+  },
+  "intro": {
+    "ar": "أحوّل العمل اليدوي المتعب في الجداول والكشوفات إلى برامج واضحة وآمنة يستخدمها الناس كل يوم، من مركز إيواء في دير البلح إلى دفتر ديون صغير.",
+    "en": "I turn tiring manual work in spreadsheets and lists into clear, safe software that people use every day — from a shelter center in Deir al-Balah to a small debts book."
+  },
+  "about": {
+    "ar": "أعمل من دير البلح في غزة. بدأت بواجهات الويب (HTML وCSS وJavaScript وReact)، ثم انتقلت إلى بناء برامج كاملة لمشكلات حقيقية حولي: إدارة الأفراد والكشوفات في مراكز الإيواء، وتنظيم الديون والدفعات.\n\nأهتم بأن يكون البرنامج سهلاً لمن ليس تقنياً، وأن تبقى البيانات الحساسة على جهاز صاحبها، وأن لا يتخذ البرنامج قراراً مهماً نيابة عن المستخدم.",
+    "en": "I work from Deir al-Balah, Gaza. I started with web interfaces (HTML, CSS, JavaScript, React), then moved to building complete programs for real problems around me: managing people and lists in shelter centers, and organizing debts and payments.\n\nI care that software is easy for non-technical people, that sensitive data stays on its owner's device, and that the program never makes an important decision on the user's behalf."
+  },
+  "location": {
+    "ar": "دير البلح، غزة",
+    "en": "Deir al-Balah, Gaza"
+  },
+  "photo": "jihad.webp",
+  "email": "thabtjhad37@gmail.com",
+  "available": {
+    "ar": "متاح للعمل الحر والوظائف",
+    "en": "Open to freelance and full-time work"
+  },
+  "links": [
+    {
+      "label": {
+        "ar": "GitHub",
+        "en": "GitHub"
+      },
+      "url": "https://github.com/jihadTH4"
+    },
+    {
+      "label": {
+        "ar": "واتساب",
+        "en": "WhatsApp"
+      },
+      "url": "https://wa.me/970595665806"
+    },
+    {
+      "label": {
+        "ar": "Frontend Mentor",
+        "en": "Frontend Mentor"
+      },
+      "url": "https://www.frontendmentor.io/profile/jihadTH4"
+    },
+    {
+      "label": {
+        "ar": "إنستغرام",
+        "en": "Instagram"
+      },
+      "url": "https://www.instagram.com/thabitjihad"
+    }
+  ],
+  "skills": [
+    {
+      "group": {
+        "ar": "برامج وأدوات",
+        "en": "Apps and tools"
+      },
+      "items": [
+        "Go",
+        "Python",
+        "SQL",
+        "Excel automation",
+        "Django"
+      ]
+    },
+    {
+      "group": {
+        "ar": "واجهات الويب",
+        "en": "Web interfaces"
+      },
+      "items": [
+        "JavaScript",
+        "React",
+        "HTML",
+        "CSS",
+        "Tailwind",
+        "Sass"
+      ]
+    },
+    {
+      "group": {
+        "ar": "طريقة العمل",
+        "en": "Workflow"
+      },
+      "items": [
+        "Git / GitHub",
+        "UI/UX",
+        "AI-assisted development"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "title": {
+        "ar": "CS50x: مقدمة في علوم الحاسوب",
+        "en": "CS50x: Introduction to Computer Science"
+      },
+      "issuer": {
+        "ar": "جامعة هارفارد",
+        "en": "Harvard University"
+      },
+      "year": "",
+      "url": "https://cs50.harvard.edu/certificates/918f81d0-62dc-474e-8a3f-f8199098fb3f"
+    }
+  ],
+  "siteUrl": "https://jihadth4.github.io/portfolio-2026-v2"
+}
